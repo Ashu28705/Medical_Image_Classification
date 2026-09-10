@@ -1,0 +1,25 @@
+{
+  "timestamp_utc": "2026-09-10T12:55:04.489830+00:00",
+  "model": "resnet50_frozen",
+  "dataset_root": "C:\\DL project\\chest_xray",
+  "classes": {
+    "NORMAL": 0,
+    "PNEUMONIA": 1
+  },
+  "image_size": 224,
+  "batch_size": 16,
+  "epochs_requested": 4,
+  "validation_fraction": 0.15,
+  "seed": 42,
+  "optimizer": "Adam",
+  "learning_rate": 0.0001,
+  "class_weights": {
+    "0": 1.944736842105263,
+    "1": 0.6730418943533698
+  },
+  "tensorflow_version": "2.20.0",
+  "python_version": "3.12.9",
+  "gpus": [],
+  "base_trainable": false,
+  "pretrained_weights": "imagenet"
+}

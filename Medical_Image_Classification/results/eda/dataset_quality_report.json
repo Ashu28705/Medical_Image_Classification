@@ -1,0 +1,115 @@
+{
+  "dataset_root": "C:\\DL project\\chest_xray",
+  "scope": "Only direct files in train/val/test class folders were audited. The nested chest_xray copy was excluded.",
+  "total_images": 5856,
+  "counts": {
+    "train": {
+      "NORMAL": 1341,
+      "PNEUMONIA": 3875
+    },
+    "val": {
+      "NORMAL": 8,
+      "PNEUMONIA": 8
+    },
+    "test": {
+      "NORMAL": 234,
+      "PNEUMONIA": 390
+    }
+  },
+  "training_pneumonia_ratio": 0.742906,
+  "file_extensions": {
+    ".jpeg": 5856
+  },
+  "image_modes": {
+    "L": 5573,
+    "RGB": 283
+  },
+  "most_common_dimensions": [
+    [
+      "1072x648",
+      7
+    ],
+    [
+      "1008x704",
+      7
+    ],
+    [
+      "1216x872",
+      6
+    ],
+    [
+      "1080x728",
+      6
+    ],
+    [
+      "992x592",
+      6
+    ],
+    [
+      "992x608",
+      6
+    ],
+    [
+      "1304x968",
+      5
+    ],
+    [
+      "1088x712",
+      5
+    ],
+    [
+      "1008x680",
+      5
+    ],
+    [
+      "976x672",
+      5
+    ],
+    [
+      "1064x760",
+      5
+    ],
+    [
+      "1192x760",
+      5
+    ],
+    [
+      "1152x664",
+      5
+    ],
+    [
+      "1136x680",
+      5
+    ],
+    [
+      "1008x600",
+      5
+    ],
+    [
+      "1160x736",
+      5
+    ],
+    [
+      "1184x792",
+      5
+    ],
+    [
+      "1000x704",
+      5
+    ],
+    [
+      "968x656",
+      4
+    ],
+    [
+      "1008x728",
+      4
+    ]
+  ],
+  "corrupt_file_count": 0,
+  "corrupt_files": [],
+  "unusual_file_count": 0,
+  "unusual_files": [],
+  "exact_duplicate_group_count": 30,
+  "cross_split_exact_duplicate_group_count": 0
+}

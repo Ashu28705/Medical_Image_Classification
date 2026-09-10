@@ -1,0 +1,16 @@
+{
+  "test_image_count": 624,
+  "threshold": 0.5,
+  "true_negative": 0,
+  "false_positive": 234,
+  "false_negative": 0,
+  "true_positive": 390,
+  "accuracy": 0.625,
+  "precision_pneumonia": 0.625,
+  "recall_sensitivity_pneumonia": 1.0,
+  "specificity_normal": 0.0,
+  "f1_pneumonia": 0.7692307692307693,
+  "roc_auc": 0.8174008327854482,
+  "model_path": "C:\\DL project\\Medical_Image_Classification\\results\\baseline_cnn\\initial_2026_09_10\\best_model.keras",
+  "dataset_root": "C:\\DL project\\chest_xray"
+}
