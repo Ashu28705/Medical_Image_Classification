@@ -1,0 +1,20 @@
+# Python environment and virtual environments
+.venv/
+venv/
+env/
+*.pyc
+__pycache__/
+
+# Jupyter and editor caches
+.ipynb_checkpoints/
+.keras_cache/
+.cache/
+.DS_Store
+
+# Local project build and generated artifacts that should not be committed
+.presentation_build/
+presentation_build/
+
+# Basic output folders that are useful for reproducibility can remain tracked
+# If you want to keep only source files, remove the comment below.
+# results/
