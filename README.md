@@ -69,7 +69,7 @@ Grad-CAM Explainability
 
 The existing Pneumonia module provides an end-to-end workflow for image upload, classification, confidence visualization, and Grad-CAM-based model explanation.
 
-🚀 Platform Expansion
+**##🚀 Platform Expansion**
 
 MEDVISION AI is being developed as a multimodal disease classification platform rather than a single-disease classifier.
 
