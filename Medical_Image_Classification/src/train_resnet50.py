@@ -20,6 +20,18 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 os.environ.setdefault("KERAS_HOME", str(PROJECT_ROOT / ".keras_cache"))
 
+
+def resolve_dataset_root(project_root: Path) -> Path:
+    candidates = [
+        project_root.parent / "chest_xray",
+        project_root.parent.parent / "chest_xray",
+        project_root / "chest_xray",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return candidates[0]
+
 import matplotlib
 matplotlib.use("Agg")  # headless plots
 
@@ -51,7 +63,7 @@ from evaluate import evaluate as run_evaluation
 from gradcam import load_xray, make_gradcam_heatmap, overlay_heatmap
 from plot_history import plot_history
 
-DATASET_ROOT = PROJECT_ROOT.parent / "chest_xray"
+DATASET_ROOT = resolve_dataset_root(PROJECT_ROOT)
 RESULTS_DIR = PROJECT_ROOT / "results"
 MODELS_DIR = PROJECT_ROOT / "models"
 FINAL_MODEL_DIR = MODELS_DIR / "resnet50"

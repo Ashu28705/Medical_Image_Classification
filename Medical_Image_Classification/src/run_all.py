@@ -20,7 +20,21 @@ import tensorflow as tf
 
 # ── Project paths ────────────────────────────────────────────────────────────
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATASET_ROOT = PROJECT_ROOT.parent / "chest_xray"
+
+
+def resolve_dataset_root(project_root: Path) -> Path:
+    candidates = [
+        project_root.parent / "chest_xray",
+        project_root.parent.parent / "chest_xray",
+        project_root / "chest_xray",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return candidates[0]
+
+
+DATASET_ROOT = resolve_dataset_root(PROJECT_ROOT)
 RESULTS_DIR  = PROJECT_ROOT / "results"
 MODELS_DIR   = PROJECT_ROOT / "models"
 

@@ -47,10 +47,23 @@ def build_resnet50(image_size: int = 224, dropout_rate: float = 0.35, weights: s
 
 def unfreeze_resnet_top(model: tf.keras.Model, trainable_layers: int = 30) -> None:
     """Unfreeze the last convolutional layers, retaining batch-norm statistics frozen."""
-    base = next(layer for layer in model.layers if isinstance(layer, tf.keras.Model) and layer.name.startswith("resnet50"))
-    base.trainable = True
-    for layer in base.layers[:-trainable_layers]:
+    nested_base = next(
+        (layer for layer in model.layers
+         if isinstance(layer, tf.keras.Model) and layer.name.startswith("resnet50")),
+        None,
+    )
+    if nested_base is not None:
+        base_layers = nested_base.layers
+        nested_base.trainable = True
+    else:
+        head_names = {"xray_image", "global_average_pooling", "classification_dropout", "pneumonia_probability"}
+        base_layers = [layer for layer in model.layers if layer.name not in head_names]
+        model.trainable = True
+
+    for layer in base_layers[:-trainable_layers]:
         layer.trainable = False
-    for layer in base.layers[-trainable_layers:]:
+    for layer in base_layers[-trainable_layers:]:
         if isinstance(layer, tf.keras.layers.BatchNormalization):
             layer.trainable = False
+        else:
+            layer.trainable = True

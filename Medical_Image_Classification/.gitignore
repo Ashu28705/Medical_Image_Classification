@@ -1,0 +1,7 @@
+.keras_cache/
+**/__pycache__/
+*.py[cod]
+
+# Keep the deployed model, but avoid duplicate training checkpoints.
+results/**/best_model.keras
+results/**/last_model.keras

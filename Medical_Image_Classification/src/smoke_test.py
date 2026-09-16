@@ -9,6 +9,18 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 os.environ.setdefault("KERAS_HOME", str(PROJECT_ROOT / ".keras_cache"))
 
+
+def resolve_dataset_root(project_root: Path) -> Path:
+    candidates = [
+        project_root.parent / "chest_xray",
+        project_root.parent.parent / "chest_xray",
+        project_root / "chest_xray",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return candidates[0]
+
 import sys
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
@@ -24,7 +36,7 @@ from preprocessing import (
 )
 from gradcam import load_xray, make_gradcam_heatmap, overlay_heatmap
 
-DATASET_ROOT = PROJECT_ROOT.parent / "chest_xray"
+DATASET_ROOT = resolve_dataset_root(PROJECT_ROOT)
 IMAGE_SIZE = 224
 BATCH_SIZE = 8
 SEED = 42
