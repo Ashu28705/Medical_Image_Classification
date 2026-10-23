@@ -123,7 +123,7 @@ Each disease is treated as an independent classification problem with its own:
 | DiseaseImage ModalityStatusClassification Approach |                             |                   |                   |
 | -------------------------------------------------- | --------------------------- | ----------------- | ----------------- |
 | **Pneumonia**                                      | Chest X-Ray                 | ✅ Available       | ResNet50          |
-| **Tuberculosis**                                   | Chest X-Ray                 | 🔄 In Development | ResNet50          |
+| **Tuberculosis**                                   | Chest X-Ray                 | ✅ Available       | ResNet50          |
 | **Malaria**                                        | Blood-Smear Microscopy      | 📋 Planned        | ResNet50          |
 | **Leprosy**                                        | Skin-Lesion Image           | 📋 Planned        | ResNet50          |
 | **Cholera**                                        | Microscopy / Pathogen Image | 🧪 Experimental   | Dataset dependent |
@@ -553,7 +553,7 @@ The application is intended to demonstrate the application of deep learning and 
 
 Future development will focus on:
 
-- Completing Tuberculosis classification.
+- Further validating Tuberculosis classification with larger, more representative datasets.
 - Adding Malaria blood-smear classification.
 - Adding Leprosy skin-lesion classification.
 - Investigating suitable image-based Cholera research tasks.
@@ -571,7 +571,7 @@ The long-term goal is to develop MEDVISION AI as a **modular research platform f
 
 | ComponentStatus              |                                        |
 | ---------------------------- | -------------------------------------- |
-| Dataset Audit                | ✅ Completed for current Pneumonia work |
+| Dataset Audit                | ✅ Completed for Pneumonia and Tuberculosis |
 | EDA                          | ✅ Completed for current Pneumonia work |
 | Baseline CNN                 | ✅ Completed                            |
 | ResNet50 Transfer Learning   | ✅ Completed                            |
@@ -579,7 +579,7 @@ The long-term goal is to develop MEDVISION AI as a **modular research platform f
 | Streamlit Interface          | ✅ Available                            |
 | Grad-CAM                     | ✅ Available                            |
 | Modular Disease Architecture | 🔄 In Development                      |
-| Tuberculosis                 | 🔄 In Development                      |
+| Tuberculosis                 | ✅ Available                            |
 | Malaria                      | 📋 Planned                             |
 | Leprosy                      | 📋 Planned                             |
 | Cholera                      | 🧪 Experimental                        |
