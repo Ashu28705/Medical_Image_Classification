@@ -124,7 +124,7 @@ Each disease is treated as an independent classification problem with its own:
 | -------------------------------------------------- | --------------------------- | ----------------- | ----------------- |
 | **Pneumonia**                                      | Chest X-Ray                 | ✅ Available       | ResNet50          |
 | **Tuberculosis**                                   | Chest X-Ray                 | ✅ Available       | ResNet50          |
-| **Malaria**                                        | Blood-Smear Microscopy      | 📋 Planned        | ResNet50          |
+| **Malaria**                                        | Blood-Smear Microscopy      | 🔄 In Development | ResNet50          |
 | **Leprosy**                                        | Skin-Lesion Image           | 📋 Planned        | ResNet50          |
 | **Cholera**                                        | Microscopy / Pathogen Image | 🧪 Experimental   | Dataset dependent |
 
@@ -580,7 +580,7 @@ The long-term goal is to develop MEDVISION AI as a **modular research platform f
 | Grad-CAM                     | ✅ Available                            |
 | Modular Disease Architecture | 🔄 In Development                      |
 | Tuberculosis                 | ✅ Available                            |
-| Malaria                      | 📋 Planned                             |
+| Malaria                      | 🔄 In Development                      |
 | Leprosy                      | 📋 Planned                             |
 | Cholera                      | 🧪 Experimental                        |
 | Multimodal Platform          | 🔄 In Development                      |
