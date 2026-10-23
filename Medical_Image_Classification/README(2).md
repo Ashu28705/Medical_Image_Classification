@@ -71,6 +71,10 @@ Grad-CAM Explainability
 
 The existing Pneumonia module provides an end-to-end workflow for image upload, classification, confidence visualization, and Grad-CAM-based model explanation.
 
+### Local Dataset
+
+The downloaded Chest X-Ray Pneumonia dataset is stored at `../chest_xray` relative to this project. The training pipeline expects `train`, `val`, and `test` folders, each containing `NORMAL` and `PNEUMONIA` class folders. Keep the dataset outside the source tree; `src/train_resnet50.py` resolves this local copy automatically.
+
 ---
 
 # 🚀 Platform Expansion

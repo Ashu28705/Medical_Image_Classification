@@ -1,0 +1,71 @@
+{
+  "timestamp_utc": "2026-10-23T16:37:24.726680+00:00",
+  "model": "ResNet50 transfer learning; frozen ImageNet backbone",
+  "dataset_root": "C:\\Users\\Vivobook\\Desktop\\Medical_image_classififaction\\TB_Chest_Radiography_Database_prepared",
+  "manifest_path": "C:\\Users\\Vivobook\\Desktop\\Medical_image_classififaction\\TB_Chest_Radiography_Database_prepared\\split_manifest.csv",
+  "split_source": "prepared split_manifest.csv; no new split generated",
+  "split_counts": {
+    "train": {
+      "NORMAL": 2450,
+      "TUBERCULOSIS": 485
+    },
+    "validation": {
+      "NORMAL": 525,
+      "TUBERCULOSIS": 105
+    },
+    "test": {
+      "NORMAL": 525,
+      "TUBERCULOSIS": 104
+    }
+  },
+  "source_counts_by_split": {
+    "train": {
+      "NLM": 556,
+      "RSNA": 2166,
+      "Belarus portal (tuberculosis.by)": 213
+    },
+    "validation": {
+      "RSNA": 464,
+      "NLM": 120,
+      "Belarus portal (tuberculosis.by)": 46
+    },
+    "test": {
+      "RSNA": 464,
+      "NLM": 119,
+      "Belarus portal (tuberculosis.by)": 46
+    }
+  },
+  "classes": {
+    "NORMAL": 0,
+    "TUBERCULOSIS": 1
+  },
+  "positive_class": "TUBERCULOSIS",
+  "image_size": 224,
+  "batch_size": 8,
+  "epochs_requested": 4,
+  "seed": 42,
+  "optimizer": "Adam",
+  "learning_rate": 0.0001,
+  "class_weights_from_training_split_only": {
+    "NORMAL": 0.5989795918367347,
+    "TUBERCULOSIS": 3.0257731958762886
+  },
+  "augmentation": {
+    "layers": [
+      "RandomRotation(0.02)",
+      "RandomTranslation(0.02, 0.02)",
+      "RandomContrast(0.08)"
+    ],
+    "active_during_training_only": true,
+    "horizontal_or_vertical_flip": false
+  },
+  "preprocessing": "RGB float pixels in [0,255], resize to image_size, training augmentation, then tf.keras.applications.resnet50.preprocess_input",
+  "tensorflow_version": "2.16.1",
+  "python_version": "3.11.9",
+  "cpu_count": 16,
+  "gpus": [],
+  "hardware_note": "CPU-only training",
+  "patient_level_separation": "not guaranteed; patient identifiers are unavailable",
+  "epochs_completed": 4,
+  "best_validation_loss": 0.1337532252073288
+}

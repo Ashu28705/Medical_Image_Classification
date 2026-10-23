@@ -28,7 +28,11 @@ def resolve_dataset_root(project_root: Path) -> Path:
         project_root / "chest_xray",
     ]
     for candidate in candidates:
-        if candidate.exists():
+        if all(
+            (candidate / split / class_name).is_dir()
+            for split in ("train", "val", "test")
+            for class_name in ("NORMAL", "PNEUMONIA")
+        ):
             return candidate
     return candidates[0]
 

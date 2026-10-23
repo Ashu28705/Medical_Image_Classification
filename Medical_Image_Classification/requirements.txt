@@ -1,7 +1,8 @@
-tensorflow==2.20.0
-streamlit
-numpy
+tensorflow==2.16.1
+streamlit==1.44.1
+numpy<2
+pandas<3
 pillow
 matplotlib
 scikit-learn
-pandas
+openpyxl

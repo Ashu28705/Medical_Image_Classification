@@ -1,0 +1,14 @@
+{
+  "input_color_space": "RGB",
+  "input_pixel_range_before_preprocess": [
+    0,
+    255
+  ],
+  "resize": [
+    224,
+    224
+  ],
+  "preprocess_function": "tf.keras.applications.resnet50.preprocess_input",
+  "augmentation": "training only: RandomRotation(0.02), RandomTranslation(0.02, 0.02), RandomContrast(0.08)",
+  "prediction_threshold": 0.5
+}

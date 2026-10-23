@@ -1,0 +1,8 @@
+{
+  "class_to_index": {
+    "NORMAL": 0,
+    "TUBERCULOSIS": 1
+  },
+  "positive_class": "TUBERCULOSIS",
+  "patient_ids_available": false
+}

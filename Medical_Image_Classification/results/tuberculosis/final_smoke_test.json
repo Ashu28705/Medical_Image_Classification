@@ -1,0 +1,17 @@
+{
+  "model_loaded": true,
+  "input_shape": [
+    null,
+    224,
+    224,
+    3
+  ],
+  "output_shape": [
+    null,
+    1
+  ],
+  "test_image": "test/Tuberculosis/Tuberculosis-1.png",
+  "test_image_class": "TUBERCULOSIS",
+  "tuberculosis_probability": 0.987307608127594,
+  "probability_finite_and_bounded": true
+}

@@ -8,12 +8,17 @@ import typing
 try:
     import tensorflow as tf
     from gradcam import load_xray, make_gradcam_heatmap, overlay_heatmap
-except ImportError:
+except ImportError as exc:
     tf = None
+    _PREDICTION_IMPORT_ERROR = exc
+else:
+    _PREDICTION_IMPORT_ERROR = None
 
 
 
 def predict_xray(model: typing.Any, image_path: str | Path, image_size: int = 224) -> dict:
+    if _PREDICTION_IMPORT_ERROR is not None:
+        raise RuntimeError("TensorFlow could not initialize; X-ray prediction is unavailable.") from _PREDICTION_IMPORT_ERROR
     original, batch = load_xray(image_path, image_size)
     heatmap, pneumonia_probability, layer_name = make_gradcam_heatmap(batch, model)
     color_heatmap, overlay = overlay_heatmap(original, heatmap)
